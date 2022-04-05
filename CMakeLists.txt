@@ -1,0 +1,52 @@
+# CMAKE Version
+CMAKE_MINIMUM_REQUIRED(VERSION 3.7)
+
+# Project
+SET(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
+SET(PROJECT_VESRION 0.0.${PATCH_VERSION})
+SET(PROJECT_NAME "bayan" CACHE STRING "Project name")
+PROJECT(${PROJECT_NAME} VERSION ${PROJECT_VESRION})
+
+find_package(Boost COMPONENTS filesystem program_options regex unit_test_framework REQUIRED)
+set(Boost_USE_STATIC_LIBS ON)
+include_directories(${Boost_INCLUDE_DIR})
+
+# Sources
+SET ( SOURCES hash.cpp  filter.cpp)
+
+# Headers
+SET ( HEADERS hash.h filter.h)
+
+# Executable
+ADD_EXECUTABLE(bayan main.cpp ${SOURCES} ${HEADERS})
+
+# Properties
+SET_TARGET_PROPERTIES (
+    bayan
+        PROPERTIES
+            CMAKE_CXX_STANDARD 17
+            CMAKE_CXX_STANDARD_REQUIRED ON
+)
+
+# Include Path
+
+# Linking
+target_link_libraries(
+    bayan
+        ${Boost_LIBRARIES}
+        ${Boost_FILESYSTEM_LIBRARY}
+        ${Boost_REGEX_LIBRARY}
+        )
+
+# Compiler options
+
+# Package
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+SET(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+SET(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+SET(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "mycompany@gmail.com")
+INCLUDE(CPack)
+
+# UNIT tests
