@@ -91,7 +91,29 @@ bintray
 </pre> <h1><a class="anchor" id="autotoc_md3"></a>
 Проверка</h1>
 <p >Задание считается выполнено успешно, если после просмотра кода, подключения репозитория, установки пакета и запуска бинарного файла командой (параметры из описания): </p><pre class="fragment">$ bayan [...]
-</pre><p> будут обнаружены файлы-дубликаты, без ложных срабатываний и пропуска существующих дубликатов. Количество прочитанных данных с диска минимально </p>
+</pre><p> будут обнаружены файлы-дубликаты, без ложных срабатываний и пропуска существующих дубликатов. Количество прочитанных данных с диска минимально</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Описание работы утилиты</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Параметр   </th><th class="markdownTableHeadNone">Описание   </th><th class="markdownTableHeadNone">Значение по умолчанию    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">-h   </td><td class="markdownTableBodyNone" colspan="2">Справка    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">-i   </td><td class="markdownTableBodyNone">Добавление директории в список для сканирования   </td><td class="markdownTableBodyNone">./    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">-e   </td><td class="markdownTableBodyNone">Исключение директории из списка для сканирования   </td><td class="markdownTableBodyNone">(пустой список)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">-l   </td><td class="markdownTableBodyNone">Уровень сканирования (0 - обычный, 1 - рекурсивный)   </td><td class="markdownTableBodyNone">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">-m   </td><td class="markdownTableBodyNone">Маска сканирования в формате регулярного выражения: ".* part1.* part2.* part3.* "   </td><td class="markdownTableBodyNone">.*    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">-s   </td><td class="markdownTableBodyNone">Минимальный размер файлов   </td><td class="markdownTableBodyNone">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">-b   </td><td class="markdownTableBodyNone">Размер блока, по которому производится четние каждого файла   </td><td class="markdownTableBodyNone">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">-t   </td><td class="markdownTableBodyNone">Алгоритм хэширования читаемого из файла блока: 0 - MD5, 1 - CRC32   </td><td class="markdownTableBodyNone">0   </td></tr>
+</table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
