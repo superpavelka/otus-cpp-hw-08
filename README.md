@@ -108,4 +108,4 @@ ABC
 
 Пример ввода
 
-$ bayan -i ./Dir1 -i ./Dir2 -e ./Subdir --level=1 -m .*txt --minsize=0 -b 128 -t 1
+    $ bayan -i ./Dir1 -i ./Dir2 -e ./Subdir --level=1 -m .*txt --minsize=0 -b 128 -t 1
